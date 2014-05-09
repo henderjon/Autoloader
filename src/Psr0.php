@@ -13,6 +13,8 @@ namespace Corpus\Autoloader;
  */
 class Psr0 {
 
+	use Traits\CommonAutoloaderMethodsTrait;
+
 	/**
 	 * @var string
 	 */
@@ -23,14 +25,6 @@ class Psr0 {
 	 */
 	public function __construct( $path ) {
 		$this->path = rtrim($path, DIRECTORY_SEPARATOR);
-	}
-
-	/**
-	 * @param string $path
-	 * @return string
-	 */
-	protected final function trimSlashes( $path ) {
-		return trim($path, ' /\\');
 	}
 
 	/**
@@ -51,4 +45,4 @@ class Psr0 {
 	}
 
 
-} 
+}

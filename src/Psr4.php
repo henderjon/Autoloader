@@ -13,6 +13,8 @@ namespace Corpus\Autoloader;
  */
 class Psr4 {
 
+	use Traits\CommonAutoloaderMethodsTrait;
+
 	/**
 	 * @var string
 	 */
@@ -30,14 +32,6 @@ class Psr4 {
 	public function __construct( $root_namespace, $path ) {
 		$this->namespace = $this->trimSlashes($root_namespace);
 		$this->path      = rtrim($path, DIRECTORY_SEPARATOR);
-	}
-
-	/**
-	 * @param string $path
-	 * @return string
-	 */
-	protected final function trimSlashes( $path ) {
-		return trim($path, ' /\\');
 	}
 
 	/**
